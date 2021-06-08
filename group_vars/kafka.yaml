@@ -1,0 +1,30 @@
+kafka_version: 2.7.1
+kafka_scala_version: 2.13
+kafka_root_dir: /usr/lib
+kafka_dir: '{{ kafka_root_dir }}/kafka'
+kafka_log_dir: '/var/lib/kafka{{ kafka_broker_id }}'
+kafka_conf_dir: '/etc/kafka_{{ kafka_broker_id }}'
+kafka_auto_create_topics_enable: False
+kafka_num_io_threads: 2
+kafka_num_network_threads: 2
+kafka_num_partitions: 8
+kafka_auto_leader_rebalance_enable: True
+kafka_zookeeper_connect: '127.0.0.1:2181'
+kafka_controlled_shutdown_retry_backoff: 5000
+kafka_controlled_shutdown_enable: True
+kafka_controlled_shutdown_max_retries: 3
+kafka_offsets_topic_replication_factor: 3
+kafka_broker_rack: 1e2-19
+kafka_listener_protocol: PLAINTEXT
+kafka_listener_hostname: 0.0.0.0
+kafka_advertised_listener_protocol: SSL
+kafka_advertised_listener_hostname: 10.236.30.223
+kafka_log_flush_interval_messages: 20000
+kafka_log_flush_interval_ms: 120000
+kafka_log_retention_bytes: 10737418240
+kafka_advertised_listeners: '{{ kafka_listener_protocol }}://{{ kafka_advertised_listener_hostname }}:{{ kafka_listener_port }},{{ kafka_advertised_listener_protocol }}://{{ kafka_advertised_listener_hostname }}:{{ kafka_advertised_listener_port }}'
+kafka_listeners: '{{ kafka_listener_protocol }}://{{ kafka_listener_hostname }}:{{ kafka_listener_port }},{{ kafka_advertised_listener_protocol }}://{{ kafka_listener_hostname }}:{{ kafka_advertised_listener_port }}'
+kafka_consumer_group_id: test-consumer-group
+kafka_zookeeper_connection_timeout_ms: 18000
+
+kafka_start_service: false

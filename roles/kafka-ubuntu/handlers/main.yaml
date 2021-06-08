@@ -1,0 +1,14 @@
+---
+- name: Reload initd
+  command: systemctl daemon-reload 
+
+- name: Restart kafka service
+  service:
+    name: kafka_{{ kafka_broker_id }}
+    state: restarted
+
+- name: Restart kafka systemd
+  systemd:
+    name: kafka_{{ kafka_broker_id }}
+    state: restarted
+    daemon_reload: yes

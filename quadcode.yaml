@@ -1,0 +1,26 @@
+all:
+  hosts:
+    quadcode.test:
+  children:
+    kafka:
+      hosts:
+        kafka1001:
+          ansible_host: 18.202.55.74
+          kafka_broker_id: 1001
+          kafka_listener_port: 9092
+          kafka_advertised_listener_port: 9093
+        kafka1002:
+          ansible_host: 18.202.55.74
+          kafka_broker_id: 1002
+          kafka_listener_port: 9094
+          kafka_advertised_listener_port: 9095
+        kafka1003:
+          ansible_host: 18.202.55.74
+          kafka_broker_id: 1003
+          kafka_listener_port: 9096
+          kafka_advertised_listener_port: 9097
+        kafka1004:
+          ansible_host: 18.202.55.74
+          kafka_broker_id: 1004
+          kafka_listener_port: 9098
+          kafka_advertised_listener_port: 9099

@@ -1,0 +1,5 @@
+- name: install kafka
+  hosts: kafka
+  roles:
+    - role: roles/kafka-ubuntu
+      become: yes
